@@ -1,0 +1,239 @@
+#include <stdio.h>
+//Örnek 1
+int main()
+{
+    int T=0; //"int" tam karşılıklı ifadeler
+    int TK;
+    int alt_sinir=0;
+    int ust_sinir=100;
+    int artis=10;
+// "while"Şartı kontrol eder. Şart geçerli ise şart bozulana kadar çalışır.
+while(T<=ust_sinir)
+{
+    TK=T+273;
+    printf("celcius: %d Kelvin: %d \n",T,TK);
+    T=T+artis;
+}
+    return 0;
+}
+
+//Örnek 2
+int main()
+{
+    int T=0;
+    float TK; // "float" kesirli ifadeler
+    float D;
+    int alt_sinir=0;
+    int ust_sinir=100;
+    int artis=10;
+
+while(T<=ust_sinir)
+{
+    TK=T+273.15;
+    printf("celcius: %d Kelvin: %f \n",T,TK); //%f float olduğu için
+    T=T+artis;
+}
+    D=5/2; //sonuç 2.000 çıkmaması için 5.0 ı 2.0 a bölmemiz lazım
+    printf("5/2 =%f",D);
+    return 0;
+}
+
+//Örnek 3
+int main()
+{
+    int T=0;
+    float TK;
+    int alt_sinir=0;
+    int ust_sinir=100;
+    int artis=10;
+while(T>=alt_sinir && T<=ust_sinir)
+{
+    T=T+artis;
+    TK=T+273.15;
+    printf("%f \n",TK); // "\n" alt satıra geçmek için
+}
+    return 0;
+}
+
+//Mantıksal ifadeler
+long int= 8 bit int
+double=  long float
+char=  karakter
+>= büyük eşittir
+<= küçük eşittir
+> büyüktür
+< küçüktür
+== eşittir
+!= eşit değildir
+|| veya demek
+&& ve demek
+
+//Örnek 4
+int main()
+{
+  float x;
+  float y;
+  printf("Lütfen Öğrenci Numaranızı Giriniz. \n");
+  scanf("%f",&x);
+  y=x/2.0;
+  printf("x= %f",y);
+  return 0 ;
+}
+
+//Örnek 5
+int main()
+{
+    int T=-10;
+    float F;
+    int alt_sinir=-10;
+    int ust_sinir=120;
+    int artis=5;
+while(T>=alt_sinir && T<=ust_sinir) // "&&" ve demek
+{
+    T=T+artis;
+    F=T*1.8+32;
+    printf("%f \n",F);
+}
+
+//Örnek 6
+int main()
+{
+    char sozcuk[32]; // [sayı] dizi, %s yaz
+    scanf("%s" ,&sozcuk);
+    printf("Girdiğiniz harf = %s",sozcuk);
+    return 0;
+}
+
+//Örnek 7
+int main()
+{
+    int b=5;
+    int c=3;
+    int K;
+    K=5%3; // "%"İki tam sayının bölümünden kalanları gösteriyor
+    printf("%d",K);
+    return 0;
+}
+
+//Bilgi
+Değişkenin baş harfi % nin yanına koyulur
+İnt de d koyulur istisna
+\t tab sekme işareti ortalıyor
+\n newline yeni satır operatörü
+\\ \ karakterini yazmak için
+\"  tırnak işareti koy demek
+
+//Örnek 8
+int main()
+{
+    int b=5;
+    int c=3;
+    if(c=b) //c, b ye eşitse
+    {
+        printf("c ve b esit");
+    }
+    else  // değilse
+{
+    printf("c ve b esit degil");
+}
+    return 0;
+}
+
+//Örnek 9
+int main()
+{
+    int b=5;
+    int c=3;
+    if((c=b) && (b>c) )
+    {
+        printf("c ve b esit");
+    }
+    else
+    {
+    printf("c ve b esit degil");
+    }
+    return 0;
+}
+
+//Örnek 10
+int main()
+{
+    int x;
+    char isim[15];
+    printf("Lütfen isminizi giriniz. \n");
+    scanf("%s",&isim);
+    printf("Lütfen 10 ile 0 arasında bir sayı giriniz. \n");
+    scanf("%d",&x);
+    if(x==4)
+    {
+        printf("Cevabınız doğru.\n %s",isim);
+    }
+    else
+    {
+    printf("Cevabınız yanlış.\n %s",isim);
+    }
+
+//Aritmatik ifadeler
++-*/= %
+% yüzde demek değil
+İnt Z;
+Z=2+9; Aritmetik ifade, aynı zamanda bir değer aktarma ifadesi
+İnt i;
+i=5;
+Z=i*3 aritmetik ifade aynı zamanda değer aktarma ifadesi
+Bu çarpma bölme gibi işlemlerin öncelikleri farklı: *, /, %, + ve - den öncelikli
+*,/, % eş öncelikli
++ ve - de kendi arasında eş öncelikli
+Eş öncelikli işlemlerde soldan sağa gidildiği için soldaki önceliklidir.
+Parantez açıp öncelik sırası belirleyebiliriz.
+
+//Örnek 11
+int main()
+{
+    int sayi=14;
+    int alinan_sayi;
+    char Oyuncu_Adi[20];
+    int kontrol=1;
+    printf("Merhaba, adinizi giriniz:");
+    scanf("%s", &Oyuncu_Adi );
+    printf("Merhaba %s. Lutfen bir sayi giriniz.\n", Oyuncu_Adi );
+    while (kontrol==1)
+    {
+      scanf("%d", &alinan_sayi);
+      if (alinan_sayi==sayi) {
+        printf("Tebrikler \n");
+        kontrol=0;
+      }
+      else if (alinan_sayi==(sayi-1) || alinan_sayi==(sayi+1)) {
+        printf("Cok yaklastiniz!\n");
+      }
+      else {
+        printf("Yanlis bildiniz! Yeniden deneyin. \n");
+      }
+    }
+     printf("Oyun bitti, tesekkurler\n");
+    return 0;
+}
+
+15.04.2021
+//Örnek 12 --- Kısa Sınav
+int main()
+{
+  int sayi;
+  int karesi;
+  int kupu;
+
+ printf("Merhaba, lutfen bir sayi giriniz \n ");
+
+ scanf("%d", &sayi);
+ karesi=sayi*sayi;
+ kupu=sayi*sayi*sayi;
+
+ printf("Sayinin karesi: %d \n", karesi);
+ printf("Sayinin kupu: %d \n", kupu );
+
+  return 0;
+
+}
+
+//Örnek 13
