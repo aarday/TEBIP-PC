@@ -345,3 +345,32 @@ int main()
   printf("Çarpimleri: %d \n",b );
   return 0;
 }
+//Örnek 18
+int main()
+{
+  FILE *fders;  //fdosya adında bir dosya çağırıyor
+  fders = fopen("Dersdosyası.txt","w+");
+  // "w+" okuma, yazma ve tekrar yazma
+  // "r" okuma
+  // "w" okuma ve yazma
+   fprintf(fders, "Merhaba");
+   fclose(fders);   
+  return 0;
+}
+
+//Örnek 19
+int main()
+{
+  FILE *fders;  //fdosya adında bir dosya çağırıyor
+  char yazi[10];
+  fders = fopen("Dersdosyasi.txt","r");
+  // "w+" okuma, yazma ve tekrar yazma
+  // "r" okuma
+  // "w" okuma ve yazma
+   fscanf(fders, "%s", yazi);
+   printf("%s",yazi);
+   fclose(fders);
+  // Dosayı okuma yolu
+  return 0;
+}
+
